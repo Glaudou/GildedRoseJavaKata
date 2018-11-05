@@ -84,7 +84,16 @@ public class Inventory {
         }
     }
 
-
+    public void superUpdate() {
+        Visitor visitor = new VisitorQuality();
+        Visitor visitorSellIn = new VisitorSellIn();
+        Visitor colorVisitor = new VisitorColor();
+        for (int i = 0; i < items.lentgh; i++) {
+            items[i].accept(visitor);
+            items[i].accept(visitorSellIn);
+            items[i].accept(colorVisitor);
+        }
+    }
 
     public static void main(String[] args) {
         Inventory inventory = new Inventory();
@@ -95,4 +104,6 @@ public class Inventory {
 
 
     }
+
+
 }

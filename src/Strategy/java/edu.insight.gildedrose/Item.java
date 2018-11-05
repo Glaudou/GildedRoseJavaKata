@@ -4,6 +4,7 @@ public class Item {
 
     private String name;
     private int sellIn;
+    private Strategy myStrategy;
 
     private int quality;
 
